@@ -13,7 +13,7 @@ for i in range(0, 10):
         break
     else: 
         if guess > number:
-            print(">")
+            print(">")  
             counter += 1
         else:
             print("<")
@@ -41,10 +41,7 @@ def scan_for_desired_number():
            i += 1
 
 scan_for_desired_number()
-'''
 
-
-# Programming Task 7.2 
 
 unsorted_numbers = list(map(int, input("\nEnter the numbers to sort them: ").strip().split()))
 
@@ -74,3 +71,17 @@ def sort_numbers(n):
 
 sort_numbers(unsorted_numbers)
 print(unsorted_numbers)
+'''
+
+# Programming Task 7.3
+
+num_of_items = int(input("How many items do you want to buy? "))
+total = 0
+counter = 0
+
+for i in range(num_of_items):
+    price = float(input("Enter the price: "))
+    total += price
+
+print("The total price is ", str(total))
+print("You have entered " + str(counter) + " items")
