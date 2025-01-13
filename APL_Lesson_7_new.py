@@ -45,27 +45,18 @@ scan_for_desired_number()
 unsorted_numbers = list(map(int, input("\nEnter the numbers to sort them: ").strip().split()))
 
 def sort_numbers(n):
-    changed = True
     counter = 0
-    while changed == True:
-      for x in range(len(n)-1):
+    changed = True
+    while changed == True or counter <= len(n)+1:
         changed = False
-        if n[x] > n[x+1]:
-            n[x], n[x+1] = n[x+1], n[x]
-            changed = True
-            counter += 1
-        else:  
-           changed = False
+        for x in range(len(n)-1):
+            if n[x] > n[x+1]:
+                n[x], n[x+1] = n[x+1], n[x]
+                changed = True
+            else:
+                changed = False
+                counter += 1
 
-    def sort_check(a):
-       for y in range(len(n)-1):
-          if a[y] > a[y+1]:
-             changed = True
-             sort_numbers(a) 
-          else:
-             changed = False
-    
-    sort_check(n)
 
 
 sort_numbers(unsorted_numbers)
@@ -90,6 +81,24 @@ print("You have entered " + str(counter) + " items")
 print("The average cost is: " str(avg_cost))
 '''
 
-
+'''
 # Programming Task 7.4
-  
+
+parcel_below_1_kg = 0
+parcel_between_1_and_2_kg = 0
+parcel_above_2_kg = 0
+num_of_parcels = int(input("Enter the number of parcels: "))
+
+for t in range(num_of_parcels):
+    parcel_weight = float(input("Enter the weight of the parcel: "))
+    if parcel_weight < 1:
+        parcel_below_1_kg += 1
+    elif parcel_weight >= 1 and parcel_weight <= 2:
+        parcel_between_1_and_2_kg += 1
+    elif parcel_weight > 2:
+        parcel_above_2_kg += 1
+
+print("There are " + str(parcel_below_1_kg) + " parcels below 1 kg.")
+print("There are " + str(parcel_between_1_and_2_kg) + " parcels between 1 and 2 kg.")
+print("There are " + str(parcel_above_2_kg) + " parcels above 2 kg.")
+'''
