@@ -18,3 +18,5 @@ def insertion_sort(n):
     
 unsorted_numbers = list(map(int, input("Enter the numbers to sort them: ").strip().split()))
 insertion_sort(unsorted_numbers)
+
+# Challenge: Make it more efficient using only while-else loops or by getting rid of the nested loops.
