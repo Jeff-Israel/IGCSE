@@ -1,5 +1,6 @@
 # Course & textbook concepts
 
+'''
 # Sorting ALgorithms
 def insertion_sort(n):
     sorted_list = [n[0]]
@@ -20,3 +21,9 @@ unsorted_numbers = list(map(int, input("Enter the numbers to sort them: ").strip
 insertion_sort(unsorted_numbers)
 
 # Challenge: Make it more efficient using only while-else loops or by getting rid of the nested loops.
+'''
+
+def merge_sort(n):
+   sorted_list = [n[0]]
+   # Sort this list, sort as many items as the size of the sorted list, now merge and sort it all.
+   
