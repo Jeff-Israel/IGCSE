@@ -38,7 +38,6 @@ def scan_for_desired_number():
             print("Value found at place", str(i+1))
         else:
            found = False
-           i += 1
 
 scan_for_desired_number()
 
