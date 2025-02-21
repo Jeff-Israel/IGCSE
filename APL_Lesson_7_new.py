@@ -102,3 +102,53 @@ print("There are " + str(parcel_below_1_kg) + " parcels below 1 kg.")
 print("There are " + str(parcel_between_1_and_2_kg) + " parcels between 1 and 2 kg.")
 print("There are " + str(parcel_above_2_kg) + " parcels above 2 kg.")
 '''
+
+'''
+# Programming Task 7.5
+
+smallest = 100 
+largest = 0 
+counter = 0
+total = 0
+
+for counter in range(0, 30):
+    student_mark = int(input("Enter the student's mark: "))
+    total += student_mark
+    if student_mark < smallest:
+        smallest = student_mark
+    elif student_mark > largest:
+        largest = student_mark
+
+average_mark = total/counter
+
+print("The highest mark is: ", str(largest))
+print("The lowest mark is: ", str(smallest))
+print("The average mark is: ", str(average_mark))
+'''
+
+'''
+# Programming Task 7.6
+
+username = str(input("Please enter your username: "))
+dob = input("Please enter your date of birth: ")
+character_type = str(input("Please enter your character type: "))
+starting_strength = int(input("Please enter your starting strength: "))
+starting_health = int(input("Please enter your starting health: "))
+
+accepted_character_types = ["Elf", "Fairy", "Gnome", "Magician"]
+
+while len(username) < 5:
+    print("Invalid username")
+    username = str(input("Please enter your username: "))
+while type(int(dob[0:2])) != int or dob[2] != "/" or type(int(dob[3:5])) != int or dob[5] != "/" or (type(int(dob[6:10])) != int or len(dob) != 10):
+   print("Invalid date of birth")
+   dob = input("Please enter your date of birth: ")
+while starting_strength < 1 or starting_strength > 5:
+    print("Invalid starting strength ")
+while starting_health != 10:
+    print("Invalid starting health")
+    starting_health = str(input("Please enter your starting health: "))
+while character_type not in accepted_character_types:
+    print("Invalid character type")
+    character_type = str(input("Please enter your character type: "))   
+'''    
