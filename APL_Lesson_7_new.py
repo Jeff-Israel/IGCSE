@@ -136,19 +136,22 @@ starting_strength = int(input("Please enter your starting strength: "))
 starting_health = int(input("Please enter your starting health: "))
 
 accepted_character_types = ["Elf", "Fairy", "Gnome", "Magician"]
+accepted_dates_or_months = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
 while len(username) < 5:
     print("Invalid username")
     username = str(input("Please enter your username: "))
-while type(int(dob[0:2])) != int or dob[2] != "/" or type(int(dob[3:5])) != int or dob[5] != "/" or (type(int(dob[6:10])) != int or len(dob) != 10):
-   print("Invalid date of birth")
-   dob = input("Please enter your date of birth: ")
+
+while dob[0] not in accepted_dates_or_months or dob[1] not in accepted_dates_or_months or dob[2] != '/' or dob[3] not in accepted_dates_or_months or dob[4] not in accepted_dates_or_months or dob[5] != '/' or dob[6] not in accepted_dates_or_months or dob[7] not in accepted_dates_or_months or dob[8] not in accepted_dates_or_months or dob[9] not in accepted_dates_or_months or len(dob[6:]) != 4:
+    print("Invalid date")
+    dob = input("Please enter your date of birth: ")
 while starting_strength < 1 or starting_strength > 5:
     print("Invalid starting strength ")
-while starting_health != 10:
+    starting_strength = int(input("Please enter your starting strength: "))
+while starting_health != 10 - starting_strength:
     print("Invalid starting health")
-    starting_health = str(input("Please enter your starting health: "))
+    starting_health = int(input("Please enter your starting health: "))
 while character_type not in accepted_character_types:
     print("Invalid character type")
     character_type = str(input("Please enter your character type: "))   
-'''    
+'''
