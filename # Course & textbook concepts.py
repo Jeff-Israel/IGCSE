@@ -5,8 +5,6 @@
 def insertion_sort(n):
     sorted_list = [n[0]]
 
-    # Comparing the item and putting it in the right place IS the algorithm!
-    # Try placing the item using an AND condition where it's between the smaller & larger numbers.
     for i in range(1, len(n)): 
         sorted_list.append(n[i])
         for x in range(len(sorted_list)-1):
@@ -23,7 +21,8 @@ insertion_sort(unsorted_numbers)
 # Challenge: Make it more efficient using only while-else loops or by getting rid of the nested loops.
 '''
 
+'''
 def merge_sort(n):
    sorted_list = [n[0]]
    # Sort this list, sort as many items as the size of the sorted list, now merge and sort it all.
-   
+'''
