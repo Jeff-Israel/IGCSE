@@ -79,8 +79,110 @@ else:
     print("Good. ", "It took you", count, "tries!")
 '''    
 
+'''
 # File handling
 file = open("# Course & textbook concepts.py")
 print(file.read())
 file.close()
+'''
 
+
+# Programming Task 8.4
+
+rounds = int(input("How many rounds do you wanna grind? "))
+count = 0
+x_score = 0
+o_score = 0
+game_over = False
+draw = False
+
+def determine_winner():
+
+    global game_over
+    global draw
+    global x_score
+    global o_score
+
+    for i in range(0, len(board)-1):
+        if board[i][0] == board[i][1] and board[i][0] == board[i][2] and len(board[i][0]) != 0:
+          game_over = True
+          print(str(board[i][0]) + " is the winner! ")
+          if board[i][0] == 'x':
+             x_score += 1
+          elif board[i][0] == 'y':
+             o_score += 1
+
+          
+        
+    for j in range(0, len(board)-1):
+        if board[0][j] == board[1][j] and board[0][j] == board[2][j] and len(board[0][j]) != 0:
+            game_over = True
+            print(str(board[0][j]) + " is the winner! ")
+            if board[0][j] == 'x':
+              x_score += 1
+            elif board[0][j] == 'y':
+              o_score += 1
+            
+    if board[0][0] == board[1][1] and board[0][0] == board[2][2] and len(board[0][0]) != 0:
+        game_over = True
+        print(str(board[0][0]) + " is the winner! ")
+        if board[0][0] == 'x':
+            x_score += 1
+        elif board[0][0] == 'y':
+            o_score += 1
+       
+        
+    elif board[0][2] == board[1][1] and board[0][2] == board[2][0] and len(board[0][2]) != 0:
+        game_over = True
+        print(str(board[0][2]) + " is the winner! ")
+        if board[0][2] == 'x':
+            x_score += 1
+        elif board[0][2] == 'y':
+            o_score += 1
+       
+
+    for k in range(0, 3):
+       if (len(board[k][0]) != 0 and len(board[k][1]) != 0 and len(board[k][2]) != 0 and game_over == False):
+          draw = True
+       else:
+          draw = False
+    if draw == True:
+       print("It's a draw! ")
+    
+def play_game():
+    global board
+    board = [["", "", ""], ["", "", ""], ["", "", ""]]
+    player1position = str(input("x or o? "))
+    player2position = str(input("x or o? "))
+    turn = 'x'
+    while draw == False and game_over == False:
+      if turn == player1position:
+        row = int(input("enter your row as player1: "))
+        column = int(input("enter your column as player1: "))
+        if board[row][column] == "":
+          board[row][column] = player1position
+          print(board)
+          determine_winner()
+          turn = player2position
+      elif turn == player2position:
+         row = int(input("enter your row as player2: "))
+         column = int(input("enter your column as player2: "))
+         if board[row][column] == "":
+           board[row][column] = player2position
+           print(board)
+           determine_winner()
+           turn = player1position
+       
+
+while count < rounds:
+   play_game()
+   game_over = False
+   draw = False
+   count += 1
+
+if x_score > o_score:
+   print("Final winner is: x! ")
+elif o_score > x_score:
+   print("Final winner is: o! ")
+else:
+   print("Final result: It's a draw! ")
